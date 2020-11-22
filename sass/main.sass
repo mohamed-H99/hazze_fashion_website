@@ -1,0 +1,647 @@
+@import 'config'
+
+// Header: navbar
+#main-header
+  #main-nav
+    & > div.container
+      justify-content: space-between
+      align-items: center
+      // brand
+      h1 #brand
+        color: $w-c
+        font-size: 2rem
+        // span
+        span
+          color: $m-c
+      // nav-list
+      .nav-list
+        align-items: center
+        justify-content: center
+        // li
+        li
+          // a
+          a
+            display: inline-block
+            padding: 1.5rem 1rem
+            color: $w-c
+            border-bottom: 2px solid transparent
+            transition: border $ts
+            &:hover
+              border-bottom-color: $m-c
+            // dropdown dragger
+          &.dragger
+            position: relative
+            & > a
+              border-bottom-color: transparent
+            .dropdown
+              opacity: 0
+              visibility: hidden
+              position: absolute
+              top: 70px
+              left: 50%
+              transform: translateX(-50%)
+              transition: opacity $ts
+              min-width: 100px
+              // height: auto
+              background-color: $semi-d-c
+              border-radius: $br
+              border-top: 2px solid $m-c
+              overflow: hidden
+              z-index: 11
+              box-shadow: 0 3px 10px $d-c
+              // inside dropdown
+              li
+                transition: background $ts
+                a
+                  display: inline-block
+                  width: 100%
+                  padding: 0.5rem 0
+                  text-align: center
+                  border: none
+                &:hover
+                  background-color: $d-c
+            // on hover
+            &:hover
+              .dropdown
+                visibility: visible
+                opacity: 1
+
+
+
+// Header: showcase
+#main-header
+  #showcase
+    position: relative
+    background: url('../img/showcase.jpg') no-repeat center/cover
+    min-height: 100vh
+    &:after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      background: linear-gradient(to right, $d-c, $m-c)
+      mix-blend-mode: soft-light
+      z-index: 0
+    & > div.container
+      position: relative
+      z-index: 10
+      height: 100vh
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      &:before
+        content: ''
+        position: absolute
+        margin: auto
+        width: 80%
+        height: 80%
+        background: transparent
+        border: 2rem solid rgba(255,255,255,0.05)
+        z-index: -1
+      p
+        width: 50%
+
+// section: about-us
+#about-us
+  & > div.container
+    grid-template-columns: repeat(2,1fr)
+    gap: 2rem
+    img
+      width: 100%
+// section: our-services
+#our-services
+  .items
+    grid-template-columns: repeat(3, 1fr)
+    gap: 2rem
+    margin: 4rem 0
+    .item
+      padding: 3rem 1.5rem
+      border-radius: $br
+      border-bottom: 2px solid transparent
+      background-color: $semi-d-c
+      transition: $ts
+      &:hover
+        border-bottom-color: $m-c
+      i
+        font-size: 3rem
+        color: $m-c
+      h3
+        color: $w-c
+        margin: 2rem 0
+        font-size: 1.5rem
+
+// section: our-portfolio
+#our-portfolio
+  background: linear-gradient(to bottom, $semi-d-c, $d-c)
+  .pics
+    margin: 3rem 0
+    grid-template-areas: 'p1 p1 p2 p2' 'p1 p1 p3 p4'
+    position: relative
+    & > div
+      position: relative
+      &:first-child
+        grid-area: p1
+      &:nth-child(2)
+        grid-area: p2
+      &:nth-child(3)
+        grid-area: p3
+      &:nth-child(4) // last-child
+        grid-area: p4
+      a
+        opacity: 0
+        transition: opacity $ts
+        text-decoration: none
+        color: $w-c
+        display: inline-block
+        padding: 0.5rem
+        background-color: $m-c
+        border-radius: 5rem
+        width: 3rem
+        height: 3rem
+        font-size: 1.5rem
+        position: absolute
+        z-index: 6
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        &:first-child
+          left: 40%
+        &:last-of-type
+          left: 60%
+      &:hover
+        a
+          opacity: 1
+      img
+        width: 100%
+        height: 100%
+        position: relative
+        object-fit: cover
+        transition: opacity $ts
+        &:hover
+          opacity: 0.7
+          
+  .number
+    grid-template-columns: repeat(2, 1fr)
+    text-align: left
+    gap: 4rem
+    & > div:first-child
+      h1
+        margin-bottom: 2rem
+    & > div:last-child
+      .flex
+        h1
+          margin-right: 2rem
+          color: $m-c
+          justify-self: start
+        div > h3
+          font-size: 1.4rem
+          margin-bottom: 0.5rem
+    
+  .testimonials
+    .boxes
+      grid-template-columns: 1fr 1fr
+      gap: 3rem
+      .box
+        background-color: $semi-d-c
+        padding: 3rem 2rem
+        border-radius: $br
+        display: flex
+        align-items: center
+        justify-content: center
+        img
+          width: 150px
+          height: 150px
+          border-radius: 5rem
+          object-fit: cover
+          display: inline-block
+          margin-right: 2rem
+        & > div
+          text-align: left
+          h3
+            font-size: 1.5rem
+          p:first-of-type
+            color: $m-c
+            text-transform: uppercase
+            margin: 0.5rem 0
+            font-size: 0.8rem
+          p:last-of-type
+            color: rgba(255,255,255,0.7)
+            line-height: 1.5
+
+// section: overlay-bg
+#overlay-bg
+  min-height: 40vh
+  background: url('../img/overlay-bg.jpg') no-repeat center/cover
+  background-attachment: fixed
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    background: $m-c
+    opacity: 0.7
+  & > div.container
+    position: relative
+    z-index: 10
+    p
+      color: $w-c
+    a.btn
+      color: $m-c
+      background-color: $w-c
+      &:hover
+        
+
+// section: our-team
+#our-team
+  & > div.container
+    .items
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 2rem
+      margin: 3rem 0
+      .item
+        position: relative
+        &:hover .over
+          opacity: 1
+        img
+          width: 100%
+          height: 500px
+          object-fit: cover
+          display: block
+          position: relative
+          
+        .over
+          opacity: 0
+          // transform: scale(1)
+          transition: all $ts
+          position: absolute
+          width: 85%
+          background-color: $semi-d-c
+          height: auto
+          border-radius: $br
+          padding: 2rem 1rem
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          p:first-of-type
+            line-height: 1.5
+            color: $semi-w-c
+            margin-bottom: 2rem
+          h3
+            font-size: 1.5rem
+            margin: 0.5rem 0
+          p:last-of-type
+            text-transform: uppercase
+            color: $m-c
+            font-size: 0.8rem
+          ul
+            list-style: none
+            display: flex
+            justify-content: center
+            align-items: center
+            margin: 1.5rem 0
+            li a
+              color: $w-c
+              display: inline-block
+              margin: 0 0.2rem
+              font-size: 1.1rem
+              i
+                padding: 0.8rem
+                transition: all $ts
+                background-color: $g-c
+                border-radius: 5rem
+                &:hover
+                  background-color: $w-c
+                  color: $g-c
+
+
+// section: latest-blog
+#latest-blog
+  & > div.container
+    .items
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 2rem
+      margin: 3rem 0
+      .item
+        grid-template-columns: 1fr 1fr
+        gap: 1rem
+        background-color: $d-c
+        border-radius: $br
+        overflow: hidden
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+        & > div
+          padding: 2rem 1rem
+          p:first-of-type
+            color: $m-c
+            margin-bottom: 0.5rem
+          h3
+            margin: 1rem 0
+            a
+              text-decoration: none
+              font-size: 1.5rem
+              color: $w-c
+          & > div.flex
+            justify-content: center
+            align-items: center
+            img
+              width: 60px
+              height: 60px
+              border-radius: 5rem
+              object-fit: cover
+              display: inline-block
+              margin-right: 1rem
+            & > div
+              h3
+                margin-bottom: 0.2rem
+              p
+                text-transform: uppercase
+                font-size: 0.8rem
+              
+        
+// Footer
+#main-footer
+  & > div.container
+    grid-template-columns: repeat(4, 1fr)
+    gap: 3rem
+    & > div:first-child
+      h1 a
+        text-decoration: none
+        color: $w-c
+        display: block
+        margin-bottom: 1.5rem
+        span
+          color: $m-c
+      p
+        color: $l-c
+      ul
+        display: flex
+        align-items: center
+        li a
+          text-decoration: none
+          display: inline-block
+          margin-right: 1rem
+          color: $w-c
+          i
+            padding: 0.5rem
+            background-color: $g-c
+            border-radius: 5rem
+            transition: all $ts
+            &:hover
+              background-color: $w-c
+              color: $g-c
+
+    & > div:nth-child(2)
+      h2
+        margin-bottom: 1.5rem
+      ul
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        li
+          padding: 0.5rem 0
+          a
+            color: $l-c
+            transition: color $ts
+            &:hover
+              color: $w-c
+    & > div:nth-child(3)
+      h2
+        margin-bottom: 1.5rem
+      input[type="email"]
+        padding: 0.8rem 1.6rem
+        outline: none
+        border-radius: $br
+        border: none
+        display: block
+        margin-bottom: 0.5rem
+        width: 100%
+      a.btn-main
+        display: inline-block
+        width: 100%
+    & > div:nth-child(4)
+      h2
+        margin-bottom: 1.5rem
+      & > div.grid
+        grid-template-columns: repeat(3,1fr)
+        gap: 0.5rem
+        img
+          width: 100%
+          height: 80px
+          object-fit: cover
+          cursor: pointer
+    & > div:last-child
+      padding-bottom: 0
+      grid-column: 1 / span 4
+      p i
+        color: $m-c
+      
+
+// About Us Page
+.quick-access
+  // border-bottom: 2px solid $d-c
+  & > div.container
+    justify-content: space-between
+    align-items: center
+    p
+      color: $g-c
+      a
+        color: $semi-l-c
+        display: inline-block
+        &:after
+          content: ''
+          width: 0.4rem
+          position: relative
+          bottom: 2px
+          height: 0.4rem
+          border-radius: 5rem
+          background-color: $g-c
+          display: inline-block
+          margin: 0 0.1rem 0 0.5rem
+#about-us
+  & > div.container
+    & > div
+      ul.flex
+        justify-content: space-between
+        align-items: center
+        li
+          text-align: center
+          h1
+            &:after
+              content: ''
+              display: inline-block
+              width: 1px
+              height: 3rem
+              background-color: $g-c
+              position: relative
+              left: 2rem
+              top: 2rem
+          p
+            text-transform: uppercase
+            color: $l-c
+            letter-spacing: 1px
+
+#latest-blog
+  & > div.container
+    .items
+      .item.bg-main
+        grid-template-columns: 1fr
+        padding: 1rem 3rem
+        & > div
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: flex-start
+          p
+            color: $w-c
+    a.btn
+      display: inline-block
+      border: 2px solid $m-c
+      color: $w-c
+      position: relative
+      left: 50%
+      transform: translateX(-50%)
+      margin-bottom: 3rem
+      &:hover
+        opacity: 1
+
+// Gallery page
+#gallery
+  & > div.container
+    ul
+      justify-content: center
+      align-items: center
+      li
+        margin: 1.5rem
+        text-transform: uppercase
+        font-weight: bold
+        cursor: pointer
+        transition: color $ts
+        letter-spacing: 1px
+        &:hover,
+        &.current
+          color: $m-c
+    .photos
+      margin: 3rem 0
+      display: grid
+      grid-template-areas: 'p1 p1 p2 p3' 'p1 p1 p4 p5' 'p6 p7 p8 p8' 'p6 p7 p8 p8'
+      gap: 1.5rem
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+      & > div:nth-child(1)
+        grid-area: p1
+      & > div:nth-child(2)
+        grid-area: p2
+      & > div:nth-child(3)
+        grid-area: p3
+      & > div:nth-child(4)
+        grid-area: p4
+      & > div:nth-child(5)
+        grid-area: p5
+      & > div:nth-child(6)
+        grid-area: p6
+      & > div:nth-child(7)
+        grid-area: p7
+      & > div:nth-child(8)
+        grid-area: p8
+
+#map
+  width: 100%
+  min-height: 80vh
+  background-color: $g-c
+  position: relative
+  &:after
+    content: '<MAP/>'
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    font-size: 5rem
+    color: $semi-d-c
+
+#contact-form
+  & > div.container
+    display: grid
+    grid-template-columns: 2fr 3fr
+    gap: 2rem
+    margin-top: 3rem
+    margin-bottom: 3rem
+    & > div
+      h3
+        font-size: 1.5rem
+        margin-bottom: 2rem
+      ul
+        li
+          justify-content: flex-start
+          align-items: center
+          margin-bottom: 1rem
+          i
+            color: $m-c
+            text-align: center
+            padding: 1rem
+            background-color: $g-c
+            margin-right: 2rem
+            border-radius: 5rem
+            width: 4rem
+            height: 4rem
+          & > div
+            p
+              font-size: 1.2rem
+              &:first-of-type
+                margin-bottom: 0
+    & > div.form-inputs
+      form
+        .input-groups
+          grid-template-areas: 'in1 in2' 'in3 in3'
+          gap: 2rem
+          textarea
+            padding: 0.8rem 1.6rem
+            outline: none
+            border: none
+            background-color: $g-c
+            margin-bottom: 3rem
+            width: 100%
+            max-width: 100%
+            grid-area: in3
+            min-height: 100px
+            font-size: 1.1rem
+            font-family: $m-f
+            color: $semi-d-c
+            transition: background $ts
+            &:focus
+              background-color: $w-c
+          input
+            padding: 0.8rem 1.6rem
+            outline: none
+            border: none
+            background-color: $g-c
+            width: 100%
+            font-size: 1.1rem
+            color: $semi-d-c
+            font-family: $m-f
+            &:first-child
+              grid-area: in1
+            &:nth-child(2)
+              grid-area: in2
+            transition: background $ts
+            &:focus
+              background-color: $w-c
+              
+              
+
+
+
+
+
+// include mobile (media queries) at the end of main style
+@import 'mobile'

@@ -1,0 +1,234 @@
+@media screen and ( max-width: 768px )
+  // Medium & semi-small screens
+    // 
+  .l-heading
+    font-size: 3rem
+  .m-heading
+    font-size: 2rem
+  .lead
+    font-size: 1rem
+  // Header: navbar
+  #main-header
+    #main-nav
+      & > div.container
+        display: block
+        h1
+          text-align: center
+          margin-top: 1rem
+    #showcase
+      & > div.container
+        p
+          width: 80%
+  #about-us
+    & > div.container
+      grid-template-columns: 1fr
+      gap: 1rem
+  #our-services
+    .items
+      grid-template-columns: 1fr
+  #our-portfolio
+    .pics
+      grid-template-areas: 'p1 p1' 'p2 p2' 'p3 p4'
+    .number
+      grid-template-columns: 1fr
+    .testimonials
+      .boxes
+        grid-template-columns: 1fr
+  #our-team
+    & > div.container
+      .items
+        grid-template-columns: 1fr
+
+  #latest-blog
+    & > div.container
+      .items
+        display: grid
+        grid-template-columns: 1fr
+        .item
+          grid-template-columns: 1fr
+          gap: 0
+          img
+            width: 100%
+            height: auto
+          & > div
+            padding-left: 2.5rem
+            padding-right: 2.5rem
+            & > div.flex
+              justify-content: flex-start
+              align-items: center
+
+  #main-footer
+    & > div.container
+      grid-template-columns: 1fr
+      gap: 2rem
+      & > div
+        border-bottom: 1px solid $g-c
+        padding-bottom: 2rem
+      & > div:nth-child(4)
+        h2
+          margin-bottom: 1.5rem
+        & > div.grid
+          grid-template-columns: repeat(3, 1fr)
+          gap: 0.5rem
+          img
+            width: 100%
+            height: 120px
+            object-fit: cover
+            cursor: pointer
+      & > div:last-child
+        padding-bottom: 0
+        grid-column: 1
+        border-bottom: none
+
+  #about-us
+    & > div.container
+      & > div
+        ul.flex
+          li
+            h1
+              &:after
+                left: 1rem
+            &:last-child
+              h1
+                &:after
+                  content: ''
+                  opacity: 0
+  
+  #gallery
+    & > div.container
+      ul
+        li
+          margin: 1rem
+          font-size: 0.8rem
+      .photos
+        grid-template-areas: 'p1 p1' 'p1 p1' 'p2 p3' 'p4 p5' 'p6 p7' 'p8 p8' 'p8 p8'
+  #contact-form
+    & > div.container
+      display: grid
+      grid-template-columns: 1fr
+      & > div
+        &:first-child
+          border-bottom: 1px solid $g-c
+          padding-bottom: 1rem
+
+
+
+@media screen and ( max-width: 501px )
+  // Small & narrow screens
+    // 
+  .l-heading,
+  .m-heading,
+  .sec-heading,
+  .lead
+    text-align: center
+  a[class ^= 'btn']
+    margin: auto !important
+    display: block
+  // Header: navbar
+  #main-header
+    #main-nav
+      & > div.container
+        display: block
+        h1
+          margin-bottom: 1rem
+        .nav-list
+          display: block
+          // display: none
+          li
+            border-bottom: 1px solid $g-c
+            a
+              width: 100%
+    #showcase
+      text-align: center
+      .sec-heading
+        margin: auto
+      h1
+        margin: 0 auto
+      .lead
+        color: $semi-w-c
+        margin: auto
+      a[class^='btn']
+        margin: auto !important
+  #about-us
+    a.btn-main
+      margin: auto !important
+
+  #our-portfolio
+    .pics
+      grid-template-areas: 'p1' 'p2' 'p3' 'p4'
+    .number
+      & > div:last-child
+        .flex
+          flex-direction: column
+          h1
+            margin-right: 2rem
+            color: $m-c
+            justify-self: start
+          div > h3
+            font-size: 1.4rem
+            margin-bottom: 0.5rem
+    .testimonials
+      .boxes
+        .box
+          flex-direction: column
+          img
+            display: block
+            margin: auto
+          & > div
+            text-align: center
+            margin-top: 2rem
+  #about-us
+    & > div.container
+      & > div
+        ul.flex
+          li
+            font-size: 0.7rem !important
+            h1
+              font-size: 1.5rem
+              &:after
+                left: 1rem
+  #latest-blog
+    & > div.container
+      .items
+        .item.bg-main
+          padding: 0rem
+  
+  #gallery
+    & > div.container
+      ul
+        li
+          margin: 0.4rem
+          font-size: 0.7rem
+      .photos
+        grid-template-areas: 'p1' 'p2' 'p3' 'p4' 'p5' 'p6' 'p7' 'p8'
+  
+
+  #contact-form
+    & > div.container
+      & > div
+        h3
+          font-size: 2rem
+          text-align: center
+        ul
+          li
+            i
+            & > div
+              p
+                &:last-of-type
+                  font-size: 1rem
+      & > div.form-inputs
+        form
+          .input-groups
+            grid-template-areas: 'in1' 'in2' 'in3'
+          button
+            display: block
+            width: 100%
+
+
+  #main-footer
+    & > div.container
+      & > div:first-child
+        ul
+          justify-content: center
+      
+        
